@@ -1,7 +1,9 @@
-" call plug#begin('~/.vim/plugged') 
-" Plug 'mbbill/undotree'
-" Plug 'vim-airline/vim-airline'
-" call plug#end()
+call plug#begin('~/.vim/plugged') 
+Plug 'mbbill/undotree'
+Plug 'vim-airline/vim-airline'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tpope/vim-surround'
+call plug#end()
 
 if exists('g:loaded_sensible') || &compatible
   finish
@@ -141,6 +143,10 @@ set undofile                " Save undo's after file closes
 
 " show number
 set number
+
+set ignorecase " ignore case during search
+set hlsearch   " highlight search
+
 
 
 
