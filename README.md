@@ -1,5 +1,5 @@
-# git-intro-noname
-Git-Intro-NoName
+# vim-intro-noname
+vim-Intro-NoName
 
 - clone this repo
 - Install vim-plug: [vim-plug](https://github.com/junegunn/vim-plug#installation)
