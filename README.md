@@ -1,122 +1,127 @@
-# vim-intro-noname
-vim-Intro-NoName
+# VIM introduction
+
+VIM by default is configured badly. This repo provides a better config based on the [vim-sensible](https://github.com/tpope/vim-sensible)
+
+In order to start the new configuration:
 
 - clone this repo
 - Install vim-plug: [vim-plug](https://github.com/junegunn/vim-plug#installation)
+- Start vim with:
+> vim -u .vimrc
 
-Start with given vimrc:
-vim -u .vimrc
+Alternative: 
+> cp <this-repo>/.vimrc ~/.vimrc
+> vim
 
 ## Notes
 
-### Moving with cursor
-h j k l => moving with cursor
+### Motion
+`h j k l` Navigation
 
-0 => beginning of line
+`0` Jump to the beginning of the line
+  
+`$` End of line
 
-$ => end of line
+`w` Word by word
 
-w => Move word 
+`W` Word by w ( separated by space )
 
-W => Move WORD ( separated by space )
+`b` Backwards word-by-word (reverse of `w` )
 
-b => backwards wordswise
+`B` Backwards word-by-word (Space separated)
 
-B => backwards WORD-wise
+`f K` Move to next character `K`
+  
+`/me` Serach for next occurence of me
+  
+`3{motion}` repeat motion 3 times
+  
+  
+### More motions  
+  
+`e` Move to end of word
+  
+`E` Move to end of word (space separated)
 
-e => Move to end of word
+`t T` Same as `f T` but cursor stops before T
 
-E => Move to end of word
+`G` End of the file
+  
+`gg` Beginnign of file
 
-f F find next character
+`ctrl-d` scroll down
 
-t T till next character
+`ctr-u`scroll up
 
-/ ? search
+`ctr-e / ctrl-y` scroll up/down linewise
 
-repeat: 3w 
+### Command
 
-G => end of file
+`d`delete
 
-gg => beginnign of file
+`c` change
+  
+`v` mark characterwise
 
-ctr-d => scroll down
+`y` copy / yank
+  
+  
+  
+### More commands  
+`V` mark linewise
 
-ctr-u => scroll up
+`p` paste before
 
-ctr-e / ctrl-y => scroll up/down linewise
-
-
-### Action
-
-d => delete
-
-v => mark characterwise
-
-V => mark linewise
-
-y => copy
-
-p => paste before
-
-P => paste after
+`P` paste after
 
 
 ### Normalmode -> Insertmode
 
-i => insert before cursor
+`i` insert before cursor
 
-a => append after cursor
+`a` append after cursor
 
-I => insert at beginning 
+`I` insert at the beginning
 
-A => Append at the end of line
+`A` Append at the end of line
 
-o => before current line
+`o` before current line
 
-O => after current line
-
-J => join 
+`O` after current line
 
 ### Editing
-c => change
 
-C => Change till end of line
+`C` <=> `c$`
+  
+`D` <=> `d$`
 
-d => delete
+`S` <=> `0C`
 
-D => Delete till end of line
+`caw` => change a word
+  
+`ciw` => change within word
 
-S => change line
+`ciw` => change within word
 
-caw => change a word
-
-ciw => change within word
-
-ciw => change within word
-
-cf. => change until .
+`cf.` => change until .
 
 ### Edit code
 
-ci( 
+`ci(`
 
-ca(
+`ca(`
 
-ciB
+`ciB`
 
-ci{
+`ci{`
 
-cit
-
+`cit`
 
 ### Normal mode
 
 :s/search/replace        => one line
 
-:%s/search/replace       => while file
-
-:s/<ctrl-r><ctrl-w>/bla/ => word under cursor
+:%s/search/replace       => whole file
 
 :copy
 
@@ -128,36 +133,36 @@ cit
 
 :g/bla/move$
 
+  
+#### Advaned commands
 :ol => old files
 
 :changes 
 
 :jump
 
-ctrl-o => jump to last visited files
+`ctrl-o` jump to last visited files
 
-gi => insert mode at last inserte
+`gi` insert mode at last inserte
 
-qq -> macro
+`qq` macro
 
-CTRL-V => block mode
+`CTRL-V` block mode
 
-:w => write
+`:w?`write
 
-:q! quit
+`:q!` quite
 
 ## With terminal
 
 => mark => execute external command and return result
 
-:'<, '>!cut -f 1 -d' '
+`:'<, '>!cut -f 1 -d' '`
 
-:'<, '>!grep -i 'bla'
+`:'<, '>!grep -i 'bla'`
 
-:!ls
+`:!ls`
 
-:r !ls -lah
+`:r !ls -lah`
 
-ls -lah |  vim -
-
-
+`ls -lah |  vim -`

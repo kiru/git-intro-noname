@@ -1,15 +1,10 @@
+" vim:set ft=vim et sw=2:
+
 call plug#begin('~/.vim/plugged') 
-Plug 'mbbill/undotree'
 Plug 'vim-airline/vim-airline'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary' 
 call plug#end()
-
-if exists('g:loaded_sensible') || &compatible
-  finish
-else
-  let g:loaded_sensible = 1
-endif
 
 if has('autocmd')
   filetype plugin indent on
@@ -19,7 +14,6 @@ if has('syntax') && !exists('g:syntax_on')
 endif
 
 " Use :help 'option' to see the documentation for the given option.
-
 set autoindent
 set backspace=indent,eol,start
 set complete-=i
@@ -93,7 +87,6 @@ endif
 
 " inoremap <C-U> <C-G>u<C-U>
 
-" vim:set ft=vim et sw=2:
 
 
 " Custom settings
@@ -103,28 +96,6 @@ set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
-
-" set font
-if has("gui_running")
-  if has("gui_gtk2")
-    set guifont=Inconsolata\ 15
-  elseif has("gui_macvim")
-    set guifont=Menlo\ Regular:h14
-  elseif has("gui_win32")
-    set guifont=Consolas:h12:cANSI
-  endif
-endif
-
-" Powerline
-if !exists('g:airline_symbols')
-	let g:airline_symbols = {}
-endif
-let g:airline_symbols.space = "\ua0"
-let g:airline_right_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_left_alt_sep= ''
-let g:airline_left_sep = ''
-
 
 " tab to 2 spaces
 set expandtab
@@ -148,5 +119,16 @@ set ignorecase " ignore case during search
 set hlsearch   " highlight search
 
 
+" Airline
+if !exists('g:airline_symbols')
+	let g:airline_symbols = {}
+endif
+let g:airline_symbols.space = "\ua0"
+let g:airline_right_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_left_alt_sep= ''
+let g:airline_left_sep = ''
 
+" run in vim mode instead of vi-mode
+set nocompatible
 
